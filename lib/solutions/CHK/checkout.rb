@@ -2,7 +2,12 @@
 class Checkout
 
   def checkout(skus)
-    raise 'Not implemented'
+    validate(skus)
+  end
+
+  def validate(items)
+    items.include? ""
   end
 
 end
+
