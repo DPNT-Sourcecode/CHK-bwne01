@@ -1,6 +1,12 @@
 # noinspection RubyUnusedLocalVariable
 class Checkout
 
+  ITEMS = { A: 50,
+            B: 30,
+            C: 20,
+            D: 15
+  }
+
   def checkout(skus)
     validate(skus)
   end
@@ -16,4 +22,5 @@ class Checkout
   end
 
 end
+
 
