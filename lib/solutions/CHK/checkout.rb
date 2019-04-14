@@ -44,14 +44,15 @@ class Checkout
     money_off = 0
     basket = items.chars
     DISCOUNT.each { |hash|
-      if basket.include? hash[:item] && basket.count(hash[:item]) == hash[:number]
+      if basket.count(hash[:item]) == hash[:number]
         money_off += hash[:discount]
       end
     }
-    p money_off
+    money_off
   end
 
 end
+
 
 
 
