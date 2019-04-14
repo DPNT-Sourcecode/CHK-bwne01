@@ -7,15 +7,16 @@ describe Checkout do
   context "#illegal" do
 
     it "checks to valid items and fails" do
-      expect(market.checkout("AZ")).to eq(-1)
+      expect(market.checkout("ABCDZ")).to eq(-1)
     end
 
     it "checks for valid items and passes" do
-      expect(market.checkout("AD")).to eq("Valid")
+      expect(market.checkout("ADCCB")).to eq("Valid")
     end
 
   end
 
 end
+
 
 

@@ -11,14 +11,15 @@ class Checkout
     items.each { |item|
       puts "Checking item #{item}"
       if !valid.include? item
+        puts "Invalid item found: #{item}"
         return -1
-      else
-        return "Valid"
       end
     }
+      "Valid"
   end
 
 end
+
 
 
 
