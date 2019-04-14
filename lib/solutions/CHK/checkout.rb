@@ -10,6 +10,7 @@ class Checkout
   }
 
   DISCOUNT = [
+    {item: "A", number: 5, discount: 50},
     {item: "A", number: 3, discount: 20},
     {item: "B", number: 2, discount: 15},
     {item: "E", number: 2, discount: 30}
@@ -17,7 +18,6 @@ class Checkout
 
   def checkout(skus)
     @basket = skus.chars.sort
-    puts @basket
     unless validate
       return -1
     else
@@ -47,10 +47,13 @@ class Checkout
     DISCOUNT.each { |hash|
       multiplier = @basket.count(hash[:item]) / hash[:number]
       money_off += hash[:discount] * multiplier
+      slice_length = hash[:number] - 1
+      @basket.slice!(0,slice_length)
     }
     money_off
   end
 
 end
+
 
 
