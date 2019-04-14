@@ -16,7 +16,8 @@ class Checkout
   ]
 
   def checkout(skus)
-    @basket = skus.chars
+    @basket = skus.chars.sort
+    puts @basket
     unless validate
       return -1
     else
@@ -49,6 +50,7 @@ class Checkout
     }
     money_off
   end
-  
+
 end
+
 
