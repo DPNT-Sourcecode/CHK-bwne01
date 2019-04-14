@@ -17,7 +17,7 @@ class Checkout
   ]
 
   def checkout(skus)
-    @basket = skus.chars.sort
+    p @basket = skus.chars.sort
     unless validate
       return -1
     else
@@ -47,11 +47,17 @@ class Checkout
     DISCOUNT.each { |hash|
       multiplier = @basket.count(hash[:item]) / hash[:number]
       money_off += hash[:discount] * multiplier
+      if @basket.count(hash[:item]) >= hash[:number]
+        range = hash[:number]
+        @basket.slice!(0, range)
+      end
+      puts "Your money off for #{hash[:item]} is #{money_off}"
     }
     money_off
   end
 
 end
+
 
 
 
