@@ -6,15 +6,18 @@ class Checkout
   end
 
   def validate(items)
-    items = items.chars
+    p items = items.chars
     p valid = ('A'..'D').to_a
-    if items.include? valid
-      "Valid"
-    else
-      -1
-    end
+    items.each { |item|
+      if valid.include? item
+        "Valid"
+      else
+        return -1
+      end
+    }
   end
 
 end
+
 
 
