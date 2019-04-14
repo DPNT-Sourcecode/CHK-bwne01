@@ -43,6 +43,7 @@ class Checkout
     money_off = 0
     DISCOUNT.each { |hash|
       if @basket.count(hash[:item]) == hash[:number]
+        puts groupinator(hash[:item])
         money_off += hash[:discount] * groupinator(hash[:item])
       end
     }
@@ -50,8 +51,15 @@ class Checkout
   end
 
   def groupinator(item)
-    
+    number_of_items = 0
+    DISCOUNT.each { |hash|
+      if item == hash[:item].to_s
+        number_of_items = @basket.count(item) / hash[:number]
+      end
+    }
+    number_of_items
   end
 
 end
+
 
