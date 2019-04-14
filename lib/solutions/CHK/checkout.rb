@@ -46,15 +46,12 @@ class Checkout
     money_off = 0
     DISCOUNT.each { |hash|
       multiplier = @basket.count(hash[:item]) / hash[:number]
-        if @basket.count(hash[:item]) % hash[:number] <= 0
-          money_off += hash[:discount] * multiplier
-          slice_length = hash[:number] - 1
-          @basket.slice!(0,slice_length)
-        end
+      money_off += hash[:discount] * multiplier
     }
     money_off
   end
 
 end
+
 
 
