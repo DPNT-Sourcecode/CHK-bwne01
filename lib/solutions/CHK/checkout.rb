@@ -44,9 +44,7 @@ class Checkout
   def discount
     money_off = 0
     DISCOUNT.each { |hash|
-      if @basket.count(hash[:item]) % hash[:number] == 0
-        money_off += hash[:discount] * groupinator(hash[:item])
-      end
+      money_off += hash[:discount] * groupinator(hash[:item])
     }
     money_off
   end
@@ -62,8 +60,3 @@ class Checkout
   end
 
 end
-
-
-
-
-
