@@ -11,6 +11,7 @@ class Checkout
 
   DISCOUNT = [
     {item: "A", number: 3, discount: 20},
+    {item: "A", number: 5, discount: 50},
     {item: "B", number: 2, discount: 15},
     {item: "E", number: 2, discount: 30}
   ]
@@ -64,6 +65,7 @@ class Checkout
   end
 
 end
+
 
 
 
