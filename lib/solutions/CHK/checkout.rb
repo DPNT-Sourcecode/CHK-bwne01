@@ -15,10 +15,10 @@ class Checkout
         return -1
       end
     }
-      "Valid"
   end
 
 end
+
 
 
 
