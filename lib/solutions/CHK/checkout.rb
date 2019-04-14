@@ -44,15 +44,15 @@ class Checkout
 
   def discount
     money_off = 0
-    discount_tracker = []
     DISCOUNT.each { |hash|
       multiplier = @basket.count(hash[:item]) / hash[:number]
-      money_off += hash[:discount] * multiplier      
+      money_off += hash[:discount] * multiplier
     }
     money_off
   end
 
 end
+
 
 
 
