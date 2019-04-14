@@ -40,6 +40,11 @@ class Checkout
     bill
   end
 
+  def discount(items)
+    
+  end
+
 end
+
 
 
