@@ -2,18 +2,19 @@
 class Checkout
 
   def checkout(skus)
-    p skus
-    p validate(skus)
+    validate(skus)
   end
 
   def validate(items)
-    p items = items.chars
-    unless items.include? ("A".."D").to_a
-      -1
-    else
+    items = items.chars
+    p valid = ('A'..'D').to_a
+    if items.include? valid
       "Valid"
+    else
+      -1
     end
   end
 
 end
+
 
