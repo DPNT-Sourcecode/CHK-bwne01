@@ -11,9 +11,10 @@ describe Checkout do
     end
 
     it "checks for valid items and passes" do
-      expect(market.checkout("A,D")).to eq("Valid")
+      expect(market.checkout("AD")).to eq("Valid")
     end
 
   end
 
 end
+

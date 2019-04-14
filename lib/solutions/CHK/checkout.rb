@@ -7,7 +7,7 @@ class Checkout
   end
 
   def validate(items)
-    items = items.chars
+    p items = items.chars
     unless items.include? ("A".."D").to_a
       -1
     else
@@ -16,3 +16,4 @@ class Checkout
   end
 
 end
+
