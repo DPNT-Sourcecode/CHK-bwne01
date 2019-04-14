@@ -52,9 +52,3 @@ class Checkout
   end
 
 end
-
-
-
-
-
-
