@@ -11,7 +11,6 @@ class Checkout
 
   DISCOUNT = [
     {item: "A", number: 3, discount: 20},
-    {item: "A", number: 5, discount: 50},
     {item: "B", number: 2, discount: 15},
     {item: "E", number: 2, discount: 30}
   ]
@@ -45,11 +44,8 @@ class Checkout
   def discount
     money_off = 0
     DISCOUNT.each { |hash|
-      puts "The number of #{hash[:item]} in your basket is #{@basket.count(hash[:item])}"
-      puts "The multi-buy number is #{hash[:number]}"
-      p multiplier = @basket.count(hash[:item]) / hash[:number]
+      multiplier = @basket.count(hash[:item]) / hash[:number]
       money_off += hash[:discount] * multiplier
-      p "Your discount is #{money_off}"
     }
     money_off
   end
@@ -65,8 +61,3 @@ class Checkout
   end
 
 end
-
-
-
-
-
