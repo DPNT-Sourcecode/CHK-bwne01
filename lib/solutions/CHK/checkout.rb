@@ -30,13 +30,15 @@ class Checkout
     basket = items.chars
     bill = 0
     basket.each { |item|
-      p ITEMS[item.to_s]
-      bill += ITEMS[item.to_s]
+      p ITEMS[item.intern]
+      p bill
+      bill += ITEMS[item.intern]
     }
     bill
   end
 
 end
+
 
 
 

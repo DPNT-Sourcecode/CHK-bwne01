@@ -4,7 +4,7 @@ describe Checkout do
 
   let (:market) { Checkout.new }
 
-  context "#illegal" do
+  context "#validate" do
     it "checks to valid items and fails" do
       expect(market.checkout("ABCDZ")).to eq(-1)
     end
@@ -17,5 +17,6 @@ describe Checkout do
   end
 
 end
+
 
 
