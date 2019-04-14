@@ -1,14 +1,16 @@
 # noinspection RubyUnusedLocalVariable
 class Checkout
 
-  ITEMS = { A: 50,
-            B: 30,
-            C: 20,
-            D: 15
+  ITEMS = {
+    A: 50,
+    B: 30,
+    C: 20,
+    D: 15
   }
 
-  DISCOUNT = { A: 20,
-               B: 15
+  DISCOUNT = {
+    {item: "A", number: 3, discount: 20},
+    {item: "B", number: 2, discount: 15}
   }
 
   def checkout(skus)
@@ -33,11 +35,11 @@ class Checkout
     basket = items.chars
     bill = 0
     basket.each { |item|
-      puts "Your item costs #{ITEMS[item.intern]}"
       bill += ITEMS[item.intern]
     }
     bill
   end
 
 end
+
 
