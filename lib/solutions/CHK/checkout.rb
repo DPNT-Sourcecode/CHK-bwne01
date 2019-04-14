@@ -7,6 +7,10 @@ class Checkout
             D: 15
   }
 
+  DISCOUNT = { A: 20,
+               B: 15
+  }
+
   def checkout(skus)
     unless validate(skus)
       return -1
@@ -36,3 +40,4 @@ class Checkout
   end
 
 end
+
