@@ -17,7 +17,7 @@ class Checkout
     unless validate(skus)
       return -1
     else
-      total(skus)
+      total(skus) - discount(skus)
     end
   end
 
@@ -41,10 +41,18 @@ class Checkout
   end
 
   def discount(items)
-    
+    money_off = 0
+    basket = items.chars
+    DISCOUNT.each { |hash|
+      if basket.include? hash[item] && basket.count(hash.item) == hash[number]
+        money_off += hash[discount]
+      end
+    }
+    money_off
   end
 
 end
+
 
 
 
