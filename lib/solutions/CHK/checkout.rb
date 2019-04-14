@@ -7,13 +7,14 @@ class Checkout
   end
 
   def validate(items)
-    if !items.include? "A...D"
+    unless items.chars.include? ("A".."D").to_a
       -1
     else
-      items
+      "Valid"
     end
   end
 
 end
+
 
 
