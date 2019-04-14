@@ -18,6 +18,8 @@ class Checkout
     unless validate
       return -1
     else
+      p "Your total is #{total}"
+      p "Your discount is #{discount}"
       total - discount
     end
   end
@@ -60,6 +62,7 @@ class Checkout
   end
 
 end
+
 
 
 
