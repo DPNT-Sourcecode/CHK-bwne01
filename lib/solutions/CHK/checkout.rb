@@ -14,41 +14,44 @@ class Checkout
   ]
 
   def checkout(skus)
-    unless validate(skus)
+    @basket = skus.chars
+    unless validate
       return -1
     else
-      total(skus) - discount(skus)
+      total - discount
     end
   end
 
-  def validate(items)
-    items = items.chars
+  def validate
     valid = ('A'..'D').to_a
-    items.each { |item|
+    @basket.each { |item|
       if !valid.include? item
         return false
       end
     }
   end
 
-  def total(items)
-    basket = items.chars
+  def total
     bill = 0
-    basket.each { |item|
+    @basket.each { |item|
       bill += ITEMS[item.intern]
     }
     bill
   end
 
-  def discount(items)
+  def discount
     money_off = 0
-    basket = items.chars
     DISCOUNT.each { |hash|
-      if basket.count(hash[:item]) == hash[:number]
-        money_off += hash[:discount]
+      if @basket.count(hash[:item]) == hash[:number]
+        money_off += hash[:discount] * groupinator(hash[:item])
       end
     }
     money_off
   end
 
+  def groupinator(item)
+    
+  end
+
 end
+
