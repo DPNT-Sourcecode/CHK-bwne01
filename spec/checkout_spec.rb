@@ -16,8 +16,9 @@ describe Checkout do
     end
 
     it "Adds up a basket with specials correctly" do
-
+      expect(market.checkout("AAABB")).to eq(175)
     end
   end
 
 end
+
