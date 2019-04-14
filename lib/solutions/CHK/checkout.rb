@@ -2,12 +2,18 @@
 class Checkout
 
   def checkout(skus)
-    validate(skus)
+    p skus
+    p validate(skus)
   end
 
   def validate(items)
-    items.include? ""
+    if !items.include? "A...D"
+      -1
+    else
+      items
+    end
   end
 
 end
+
 
