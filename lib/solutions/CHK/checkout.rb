@@ -8,10 +8,10 @@ class Checkout
     D: 15
   }
 
-  DISCOUNT = {
+  DISCOUNT = [
     {item: "A", number: 3, discount: 20},
     {item: "B", number: 2, discount: 15}
-  }
+  ]
 
   def checkout(skus)
     unless validate(skus)
@@ -44,14 +44,15 @@ class Checkout
     money_off = 0
     basket = items.chars
     DISCOUNT.each { |hash|
-      if basket.include? hash[item] && basket.count(hash.item) == hash[number]
-        money_off += hash[discount]
+      if basket.include? hash[:item] && basket.count(hash[:item]) == hash[:number]
+        money_off += hash[:discount]
       end
     }
-    money_off
+    p money_off
   end
 
 end
+
 
 
 
