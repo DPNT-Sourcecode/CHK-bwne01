@@ -8,8 +8,8 @@ class Checkout
   }
 
   def checkout(skus)
-    if validate(skus)
-      -1
+    unless validate(skus)
+      return -1
     else
       total(skus)
     end
@@ -23,7 +23,6 @@ class Checkout
         return false
       end
     }
-    true
   end
 
   def total(items)
@@ -38,6 +37,7 @@ class Checkout
   end
 
 end
+
 
 
 
