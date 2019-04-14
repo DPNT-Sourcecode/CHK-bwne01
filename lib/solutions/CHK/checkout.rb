@@ -11,7 +11,8 @@ class Checkout
 
   DISCOUNT = [
     {item: "A", number: 3, discount: 20},
-    {item: "B", number: 2, discount: 15}
+    {item: "B", number: 2, discount: 15},
+    {item: "E", number: 2, discount: 30}
   ]
 
   def checkout(skus)
@@ -24,7 +25,7 @@ class Checkout
   end
 
   def validate
-    valid = ('A'..'D').to_a
+    valid = ('A'..'E').to_a
     @basket.each { |item|
       if !valid.include? item
         return false
@@ -59,4 +60,5 @@ class Checkout
   end
 
 end
+
 
