@@ -30,7 +30,7 @@ class Checkout
     basket = items.chars
     bill = 0
     basket.each { |item|
-      p ITEMS[item.intern]
+      puts "Your item is #{ITEMS[item.intern]}"
       p bill
       bill += ITEMS[item.intern]
     }
@@ -38,6 +38,7 @@ class Checkout
   end
 
 end
+
 
 
 
