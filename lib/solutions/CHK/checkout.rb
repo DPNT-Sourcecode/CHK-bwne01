@@ -8,7 +8,11 @@ class Checkout
   }
 
   def checkout(skus)
-    validate(skus)
+    if validate(skus)
+      -1
+    else
+      total(skus)
+    end
   end
 
   def validate(items)
@@ -16,11 +20,23 @@ class Checkout
     valid = ('A'..'D').to_a
     items.each { |item|
       if !valid.include? item
-        return -1
+        return false
       end
     }
+    true
+  end
+
+  def total(items)
+    basket = items.chars
+    bill = 0
+    basket.each { |item|
+      p ITEMS[item.to_s]
+      bill += ITEMS[item.to_s]
+    }
+    bill
   end
 
 end
+
 
 
