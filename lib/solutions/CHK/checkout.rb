@@ -29,14 +29,14 @@ class Checkout
     basket = items.chars
     bill = 0
     basket.each { |item|
-      puts "Your item is #{ITEMS[item.intern]}"
-      p bill
+      puts "Your item costs #{ITEMS[item.intern]}"
       bill += ITEMS[item.intern]
     }
     bill
   end
 
 end
+
 
 
 
