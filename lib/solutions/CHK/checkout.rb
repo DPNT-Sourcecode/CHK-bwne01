@@ -9,12 +9,11 @@ class Checkout
     items = items.chars
     valid = ('A'..'D').to_a
     items.each { |item|
-      puts "Checking item #{item}"
       if !valid.include? item
-        puts "Invalid item found: #{item}"
         return -1
       end
     }
   end
 
 end
+
