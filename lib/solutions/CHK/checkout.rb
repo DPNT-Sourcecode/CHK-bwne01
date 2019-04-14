@@ -48,7 +48,7 @@ class Checkout
       multiplier = @basket.count(hash[:item]) / hash[:number]
       money_off += hash[:discount] * multiplier
       if @basket.count(hash[:item]) >= hash[:number]
-        range = hash[:number]
+        range = @basket.count(hash[:item])
         @basket.slice!(0, range)
       end
       puts "Your money off for #{hash[:item]} is #{money_off}"
@@ -57,9 +57,3 @@ class Checkout
   end
 
 end
-
-
-
-
-
-

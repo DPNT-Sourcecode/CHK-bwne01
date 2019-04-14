@@ -45,4 +45,3 @@ describe Checkout do
   end
 
 end
-
