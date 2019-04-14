@@ -49,15 +49,6 @@ class Checkout
     }
     money_off
   end
-
-  def groupinator(item)
-    discount_multiplier = 0
-    DISCOUNT.each { |hash|
-      if item == hash[:item]
-        discount_multiplier = @basket.count(item) / hash[:number]
-      end
-    }
-    discount_multiplier
-  end
-
+  
 end
+
