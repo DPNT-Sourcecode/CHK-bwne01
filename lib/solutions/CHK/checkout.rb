@@ -5,7 +5,8 @@ class Checkout
     A: 50,
     B: 30,
     C: 20,
-    D: 15
+    D: 15,
+    E: 40
   }
 
   DISCOUNT = [
@@ -18,8 +19,6 @@ class Checkout
     unless validate
       return -1
     else
-      p "Your total is #{total}"
-      p "Your discount is #{discount}"
       total - discount
     end
   end
@@ -60,3 +59,4 @@ class Checkout
   end
 
 end
+
